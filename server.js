@@ -2,6 +2,12 @@ const express = require('express');
 const app = express();
 const PORT = 8001;
 
+const CYCLIC_URL= 'https://fine-erin-walkingstick-hem.cyclic.cloud'
+const CYCLIC_DB= 'fine-erin-walkingstick-hemCyclicDB'
+const CYCLIC_BUCKET_NAME= 'cyclic-fine-erin-walkingstick-hem-us-west-1'
+const CYCLIC_APP_ID= 'fine-erin-walkingstick-hem'
+const CYCLIC_URL_UPDATED= 'https://harry-potter-api.cyclic.cloud'
+
 const characters = 
     {
         'harry potter': {
@@ -35,6 +41,6 @@ app.get('/api/:name', (request, response) => {
     
 })
 
-app.listen(process.env.PORT || PORT, () => {
+app.listen(CYCLIC_URL || CYCLIC_URL_UPDATED || PORT, () => {
     console.log(`The server is now running on port ${PORT}!`)
 })
